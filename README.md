@@ -6,7 +6,7 @@ Allows you to use shortcuts to edit Markdown (`.md`, `.markdown`) files.
 ## Exposed Commands
 
 | Name | Description | Default key binding |
-| ---------------------------------------- |
+| ---- | ----------- | ------------------- |
 | md-shortcut.showCommandPalette | Display all commands | ctrl+M ctrl+M |
 | md-shortcut.toggleBold | Make \*\*bold\*\* | ctrl+B |
 | md-shortcut.toggleItalic | Make \_italic\_ | ctrl+I |
