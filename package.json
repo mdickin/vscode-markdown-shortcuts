@@ -1,0 +1,61 @@
+{
+    "name": "markdown-shortcuts",
+    "displayName": "Markdown Shortcuts",
+    "description": "Shortcuts for Markdown editing",
+    "version": "0.1.0",
+    "publisher": "mdickin",
+    "engines": {
+        "vscode": "^0.10.10"
+    },
+    "categories": [
+        "Other"
+    ],
+    "keywords": [
+        "markdown",
+        "shortcut"
+    ],
+    "main": "./extension",
+    "activationEvents": [
+        "*"
+    ],
+    "contributes": {
+        "keybindings": [
+            {
+                "command": "md-shortcut.showCommandPalette",
+                "key": "ctrl+m ctrl+m",
+                "when": "editorTextFocus && editorLangId == 'markdown'"
+            },
+            {
+                "command": "md-shortcut.toggleBold",
+                "key": "ctrl+b",
+                "when": "editorTextFocus && editorLangId == 'markdown'"
+            },
+            {
+                "command": "md-shortcut.toggleItalic",
+                "key": "ctrl+i",
+                "when": "editorTextFocus && editorLangId == 'markdown'"
+            },
+            {
+                "command": "md-shortcut.toggleLink",
+                "key": "ctrl+l",
+                "when": "editorTextFocus && editorLangId == 'markdown'"
+            },
+            {
+                "command": "md-shortcut.toggleCodeBlock",
+                "key": "ctrl+m ctrl+c",
+                "when": "editorTextFocus && editorLangId == 'markdown'"
+            },
+            {
+                "command": "md-shortcut.toggleInlineCode",
+                "key": "ctrl+m ctrl+i",
+                "when": "editorTextFocus && editorLangId == 'markdown'"
+            }
+        ]
+    },
+    "scripts": {
+        "postinstall": "node ./node_modules/vscode/bin/install"
+    },
+    "devDependencies": {
+        "vscode": "^0.11.0"
+    }
+}
