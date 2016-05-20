@@ -1,6 +1,7 @@
 .vscode/**
 typings/**
 test/**
+gifs/**
 .gitignore
 jsconfig.json
 vsc-extension-quickstart.md
