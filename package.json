@@ -2,7 +2,7 @@
     "name": "markdown-shortcuts",
     "displayName": "Markdown Shortcuts",
     "description": "Shortcuts for Markdown editing",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "publisher": "mdickin",
     "engines": {
         "vscode": "^0.10.10"
