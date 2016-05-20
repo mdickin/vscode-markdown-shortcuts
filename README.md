@@ -1,7 +1,13 @@
 
 Allows you to use shortcuts to edit Markdown (`.md`, `.markdown`) files. 
 
-**Note**: default behavior will override VS Code mapped key bindings, but only when editing Markdown files.
+**Quickly toggle bullet points**
+![](https://raw.githubusercontent.com/mdickin/vscode-markdown-shortcuts/master/gifs/bullets.gif)
+
+**Easily generate URLs**
+![](https://raw.githubusercontent.com/mdickin/vscode-markdown-shortcuts/master/gifs/urls.gif)
+
+**Note**: extension will override a few default VS Code key bindings (ctrl+B, ctrl+I, ctrl+L), but only when editing Markdown files.
 
 ## Exposed Commands
 
@@ -13,3 +19,5 @@ Allows you to use shortcuts to edit Markdown (`.md`, `.markdown`) files.
 | md-shortcut.toggleHyperlink | Make [a hyperlink]\(www.example.org) | ctrl+L |
 | md-shortcut.toggleCodeBlock | Make \`\`\`a code block\`\`\` | ctrl+M ctrl+C |
 | md-shortcut.toggleInlineCode | Make \`inline code\` | ctrl+M ctrl+I |
+| md-shortcut.toggleBullets | Make * bullet point | ctrl+M ctrl+B |
+| md-shortcut.toggleNumbers | Make 1. numbered list | ctrl+M ctrl+1 |

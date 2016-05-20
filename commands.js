@@ -4,18 +4,20 @@ module.exports = {
 }
 
 var _commands = [
-    new Command('md-shortcut.showCommandPalette', showCommandPalette),
-    new Command('md-shortcut.toggleBold', toggleBold, 'Toggle bold', '**Bold text**', true),
-    new Command('md-shortcut.toggleItalic', toggleItalic, 'Toggle italic', '_italic text_', true),
-    new Command('md-shortcut.toggleCodeBlock', toggleCodeBlock, 'Toggle code block', '```Code block```', true),
-    new Command('md-shortcut.toggleInlineCode', toggleInlineCode, 'Toggle inline code', '`Inline code`', true),
-    new Command('md-shortcut.toggleLink', toggleLink, 'Toggle hyperlink', '[Link text](link_url)', true)
+    new Command('showCommandPalette', showCommandPalette),
+    new Command('toggleBold', toggleBold, 'Toggle bold', '**Bold text**', true),
+    new Command('toggleItalic', toggleItalic, 'Toggle italic', '_italic text_', true),
+    new Command('toggleCodeBlock', toggleCodeBlock, 'Toggle code block', '```Code block```', true),
+    new Command('toggleInlineCode', toggleInlineCode, 'Toggle inline code', '`Inline code`', true),
+    new Command('toggleLink', toggleLink, 'Toggle hyperlink', '[Link text](link_url)', true),
+    new Command('toggleBullets', toggleBullets, 'Toggle bullet points', '* Bullet point', true),
+    new Command('toggleNumbers', toggleNumberList, 'Toggle number list', '1 Numbered list item', true)
 ]
 
 function register(context) {
     
     _commands.map((cmd) => {
-        context.subscriptions.push(vscode.commands.registerCommand(cmd.command, cmd.callback))
+        context.subscriptions.push(vscode.commands.registerCommand('md-shortcut.' + cmd.command, cmd.callback))
     })
 }
 
@@ -24,6 +26,8 @@ function showCommandPalette() {
         matchOnDescription: true
     })
         .then((cmd) => {
+            if (!cmd) return;
+            
             cmd.callback();
         })
 }
@@ -42,6 +46,46 @@ function toggleCodeBlock() {
 
 function toggleInlineCode() {
     surroundSelection('`')
+}
+
+var HasBullets = /^(\s*)\* (.*)$/gm
+var AddBullets = /^(\s*)(.+)$/gm
+function toggleBullets() {
+    
+    if (!isAnythingSelected()) {
+        surroundSelection("* ", "")
+        return;
+    }
+    
+    if (isMatch(HasBullets)) {
+        replaceSelection((text) => text.replace(HasBullets, "$1$2"))
+    }
+    else {
+        replaceSelection((text) => text.replace(AddBullets, "$1* $2"))
+    }
+}
+
+var HasNumbers = /^(\s*)[0-9]\.+ (.*)$/gm
+var AddNumbers = /^(\s*)(.+)$/gm
+function toggleNumberList() {
+    
+    if (!isAnythingSelected()) {
+        surroundSelection("1. ", "")
+        return;
+    }
+    
+    if (isMatch(HasNumbers)) {
+        replaceSelection((text) => text.replace(HasNumbers, "$1$2"))
+    }
+    else {
+       var lineNums = {};
+        replaceSelection((text) => text.replace(AddNumbers, (match, whitespace, line) => {
+            if (!lineNums[whitespace]) {
+                lineNums[whitespace] = 1
+            }
+            return whitespace + lineNums[whitespace]++ + ". " + line
+        }))
+    }
 }
 
 function toggleLink() {
@@ -89,12 +133,12 @@ function toggleLink() {
 
 function surroundSelection(startPattern, endPattern)
 {
-    if (!endPattern) endPattern = startPattern;
+    if (endPattern == undefined || endPattern == null) endPattern = startPattern;
     
     var editor = vscode.window.activeTextEditor;
     var selection = editor.selection;
     
-    if (selection.isEmpty) {
+    if (!isAnythingSelected()) {
         var position = selection.active;
         var newPosition = position.with(position.line, position.character + startPattern.length)
         editor.edit((edit) => {
@@ -111,6 +155,10 @@ function surroundSelection(startPattern, endPattern)
             replaceSelection((text) => startPattern + text + endPattern)
         }
     }
+}
+
+function isAnythingSelected() {
+    return !vscode.window.activeTextEditor.selection.isEmpty;
 }
 
 function isMatch(startPattern, endPattern) {

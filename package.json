@@ -49,6 +49,16 @@
                 "command": "md-shortcut.toggleInlineCode",
                 "key": "ctrl+m ctrl+i",
                 "when": "editorTextFocus && editorLangId == 'markdown'"
+            },
+            {
+                "command": "md-shortcut.toggleBullets",
+                "key": "ctrl+m ctrl+b",
+                "when": "editorTextFocus && editorLangId == 'markdown'"
+            },
+            {
+                "command": "md-shortcut.toggleNumbers",
+                "key": "ctrl+m ctrl+1",
+                "when": "editorTextFocus && editorLangId == 'markdown'"
             }
         ]
     },
@@ -57,5 +67,10 @@
     },
     "devDependencies": {
         "vscode": "^0.11.0"
+    },
+	"homepage": "https://github.com/mdickin/vscode-markdown-shortcuts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/mdickin/vscode-markdown-shortcuts.git"
     }
 }
