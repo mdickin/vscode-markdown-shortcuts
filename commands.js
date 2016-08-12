@@ -12,11 +12,12 @@ var _commands = [
     new Command('toggleLink', toggleLink, 'Toggle hyperlink', '[Link text](link_url)', true),
     new Command('toggleBullets', toggleBullets, 'Toggle bullet points', '* Bullet point', true),
     new Command('toggleNumbers', toggleNumberList, 'Toggle number list', '1 Numbered list item', true),
+    new Command('toggleTitleH1', toggleTitleH1, 'Toggle title H1', '# Title', true),
     new Command('toggleTitleH2', toggleTitleH2, 'Toggle title H2', '## Title', true),
     new Command('toggleTitleH3', toggleTitleH3, 'Toggle title H3', '### Title', true),
     new Command('toggleTitleH4', toggleTitleH4, 'Toggle title H4', '#### Title', true),
     new Command('toggleTitleH5', toggleTitleH5, 'Toggle title H5', '##### Title', true),
-    new Command('toggleTitleH6', toggleTitleH6, 'Toggle title H6', '###### Title', true),
+    new Command('toggleTitleH6', toggleTitleH6, 'Toggle title H6', '###### Title', true)
 ]
 
 function register(context) {
@@ -51,6 +52,10 @@ function toggleCodeBlock() {
 
 function toggleInlineCode() {
     surroundSelection('`')
+}
+
+function toggleTitleH1() {
+    surroundSelection('# ','')
 }
 
 function toggleTitleH2() {
