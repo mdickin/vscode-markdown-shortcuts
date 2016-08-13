@@ -27,3 +27,7 @@ Allows you to use shortcuts to edit Markdown (`.md`, `.markdown`) files.
 | md-shortcut.toggleTitleH4 | Toggle #### H4 title |  |
 | md-shortcut.toggleTitleH5 | Toggle ##### H5 title |  |
 | md-shortcut.toggleTitleH6 | Toggle ###### H6 title |  |
+
+## Changelog
+
+**v0.3.0** - Added header shortcuts. Thanks to [@alebaffa](https://github.com/alebaffa) for the contribution!
