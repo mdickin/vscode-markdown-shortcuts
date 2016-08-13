@@ -21,9 +21,9 @@ Allows you to use shortcuts to edit Markdown (`.md`, `.markdown`) files.
 | md-shortcut.toggleInlineCode | Make \`inline code\` | ctrl+M ctrl+I |
 | md-shortcut.toggleBullets | Make * bullet point | ctrl+M ctrl+B |
 | md-shortcut.toggleNumbers | Make 1. numbered list | ctrl+M ctrl+1 |
-| md-shortcut.toggleTitleH1 | Toggle title H1 |  |
-| md-shortcut.toggleTitleH2 | Toggle title H2 |  |
-| md-shortcut.toggleTitleH3 |Toggle title H3 |  |
-| md-shortcut.toggleTitleH4 | Toggle title H4 |  |
-| md-shortcut.toggleTitleH5 | Toggle title H5 |  |
-| md-shortcut.toggleTitleH6 | Toggle title H6 |  |
+| md-shortcut.toggleTitleH1 | Toggle # H1 title |  |
+| md-shortcut.toggleTitleH2 | Toggle ## H2 title |  |
+| md-shortcut.toggleTitleH3 | Toggle ### H3 title |  |
+| md-shortcut.toggleTitleH4 | Toggle #### H4 title |  |
+| md-shortcut.toggleTitleH5 | Toggle ##### H5 title |  |
+| md-shortcut.toggleTitleH6 | Toggle ###### H6 title |  |
