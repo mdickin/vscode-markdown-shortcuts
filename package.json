@@ -19,6 +19,76 @@
         "*"
     ],
     "contributes": {
+        "commands": [
+            {
+                "command": "md-shortcut.toggleBold",
+                "title": "Toggle bold",
+                "icon": {
+                    "dark":  "./media/bold_white.svg",
+                    "light": "./media/bold_black.svg"
+                },
+                "category": "Markdown Shortcuts"
+            },
+            {
+                "command": "md-shortcut.toggleItalic",
+                "title": "Toggle italic",
+                "icon": {
+                    "dark":  "./media/italic_white.svg",
+                    "light": "./media/italic_black.svg"
+                },
+                "category": "Markdown Shortcuts"
+            },
+            {
+                "command": "md-shortcut.toggleCodeBlock",
+                "title": "Toggle code block",
+                "icon": {
+                    "dark":  "./media/code_white.svg",
+                    "light": "./media/code_black.svg"
+                },
+                "category": "Markdown Shortcuts"
+            },
+            {
+                "command": "md-shortcut.toggleInlineCode",
+                "title": "Toggle inline code",
+                "category": "Markdown Shortcuts"
+            },
+            {
+                "command": "md-shortcut.toggleLink",
+                "title": "Toggle hyperlink",
+                "icon": {
+                    "dark":  "./media/link_white.svg",
+                    "light": "./media/link_black.svg"
+                },
+                "category": "Markdown Shortcuts"
+            },
+            {
+                "command": "md-shortcut.toggleBullets",
+                "title": "Toggle bullet points",
+                "icon": {
+                    "dark":  "./media/bullet_white.svg",
+                    "light": "./media/bullet_black.svg"
+                },
+                "category": "Markdown Shortcuts"
+            },
+            {
+                "command": "md-shortcut.toggleNumbers",
+                "title": "Toggle number list",
+                "icon": {
+                    "dark":  "./media/number_white.svg",
+                    "light": "./media/number_black.svg"
+                },
+                "category": "Markdown Shortcuts"
+            },
+            {
+                "command": "md-shortcut.toggleCheckboxes",
+                "title": "Toggle checkboxes",
+                "icon": {
+                    "dark":  "./media/check_white.svg",
+                    "light": "./media/check_black.svg"
+                },
+                "category": "Markdown Shortcuts"
+            }
+        ],
         "keybindings": [
             {
                 "command": "md-shortcut.showCommandPalette",
@@ -60,7 +130,63 @@
                 "key": "ctrl+m ctrl+1",
                 "when": "editorTextFocus && editorLangId == 'markdown'"
             }
-        ]
+        ],
+        "menus": {
+            "editor/context": [
+                {
+                    "command": "md-shortcut.toggleBold",
+                    "when": "editorLangId == 'markdown'",
+                    "group": "2_markdown_1"
+                },
+                {
+                    "command": "md-shortcut.toggleItalic",
+                    "when": "editorLangId == 'markdown'",
+                    "group": "2_markdown_1"
+                },
+                {
+                    "command": "md-shortcut.toggleLink",
+                    "when": "editorLangId == 'markdown'",
+                    "group": "2_markdown_1"
+                },
+                {
+                    "command": "md-shortcut.toggleCodeBlock",
+                    "when": "editorLangId == 'markdown'",
+                    "group": "2_markdown_1"
+                },
+                {
+                    "command": "md-shortcut.toggleInlineCode",
+                    "when": "editorLangId == 'markdown'",
+                    "group": "2_markdown_1"
+                },
+                {
+                    "command": "md-shortcut.toggleBullets",
+                    "when": "editorLangId == 'markdown'",
+                    "group": "2_markdown_2"
+                },
+                {
+                    "command": "md-shortcut.toggleNumbers",
+                    "when": "editorLangId == 'markdown'",
+                    "group": "2_markdown_2"
+                },
+                {
+                    "command": "md-shortcut.toggleCheckboxes",
+                    "when": "editorLangId == 'markdown'",
+                    "group": "2_markdown_2"
+                }
+            ],
+            "editor/title": [
+                {
+                    "command": "md-shortcut.toggleBold",
+                    "when": "editorLangId == 'markdown'",
+                    "group": "navigation"
+                },
+                {
+                    "command": "md-shortcut.toggleItalic",
+                    "when": "editorLangId == 'markdown'",
+                    "group": "navigation"
+                }
+            ]
+        }
     },
     "scripts": {
         "postinstall": "node ./node_modules/vscode/bin/install"

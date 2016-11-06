@@ -1,5 +1,5 @@
 
-Allows you to use shortcuts to edit Markdown (`.md`, `.markdown`) files. 
+Handy shortcuts for editing Markdown (`.md`, `.markdown`) files. Now with menu integration!
 
 **Quickly toggle bullet points**
 ![](https://raw.githubusercontent.com/mdickin/vscode-markdown-shortcuts/master/gifs/bullets.gif)
@@ -21,6 +21,7 @@ Allows you to use shortcuts to edit Markdown (`.md`, `.markdown`) files.
 | md-shortcut.toggleInlineCode | Make \`inline code\` | ctrl+M ctrl+I |
 | md-shortcut.toggleBullets | Make * bullet point | ctrl+M ctrl+B |
 | md-shortcut.toggleNumbers | Make 1. numbered list | ctrl+M ctrl+1 |
+| md-shortcut.toggleCheckboxes | Make - [ ] check list (Github flavored markdown) | ctrl+M ctrl+X |
 | md-shortcut.toggleTitleH1 | Toggle # H1 title |  |
 | md-shortcut.toggleTitleH2 | Toggle ## H2 title |  |
 | md-shortcut.toggleTitleH3 | Toggle ### H3 title |  |
@@ -30,4 +31,9 @@ Allows you to use shortcuts to edit Markdown (`.md`, `.markdown`) files.
 
 ## Changelog
 
-**v0.3.0** - Added header shortcuts. Thanks to [@alebaffa](https://github.com/alebaffa) for the contribution!
+**v0.4.0** 
+* Added title and context menu shortcuts. Menu icons taken from material.io/icons
+* Added checkbox command. Thanks to [@wenbaofu](https://github.com/wenbaofu) for the recommendation!
+
+**v0.3.0**
+* Added header shortcuts. Thanks to [@alebaffa](https://github.com/alebaffa) for the contribution!

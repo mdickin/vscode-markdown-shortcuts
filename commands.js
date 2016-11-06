@@ -17,7 +17,8 @@ var _commands = [
     new Command('toggleTitleH3', toggleTitleH3, 'Toggle title H3', '### Title', true),
     new Command('toggleTitleH4', toggleTitleH4, 'Toggle title H4', '#### Title', true),
     new Command('toggleTitleH5', toggleTitleH5, 'Toggle title H5', '##### Title', true),
-    new Command('toggleTitleH6', toggleTitleH6, 'Toggle title H6', '###### Title', true)
+    new Command('toggleTitleH6', toggleTitleH6, 'Toggle title H6', '###### Title', true),
+    new Command('toggleCheckboxes', toggleCheckboxes, 'Toggle checkboxes', '- [x] Checkbox item', true)
 ]
 
 function register(context) {
@@ -115,6 +116,23 @@ function toggleNumberList() {
             }
             return whitespace + lineNums[whitespace]++ + ". " + line
         }))
+    }
+}
+
+var HasCheckboxes = /^(\s*)- \[[ x]{1}\] (.*)$/gm
+var AddCheckboxes = /^(\s*)(.+)$/gm
+function toggleCheckboxes() {
+    
+    if (!isAnythingSelected()) {
+        surroundSelection("- [ ]", "")
+        return;
+    }
+    
+    if (isMatch(HasCheckboxes)) {
+        replaceSelection((text) => text.replace(HasCheckboxes, "$1$2"))
+    }
+    else {
+        replaceSelection((text) => text.replace(AddCheckboxes, "$1- [ ] $2"))
     }
 }
 
