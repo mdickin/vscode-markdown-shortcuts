@@ -1,5 +1,5 @@
 
-Handy shortcuts for editing Markdown (`.md`, `.markdown`) files. Now with menu integration!
+Handy shortcuts for editing Markdown (`.md`, `.markdown`) files. Now with title and context menu integration!
 
 **Quickly toggle bullet points**
 ![](https://raw.githubusercontent.com/mdickin/vscode-markdown-shortcuts/master/gifs/bullets.gif)
