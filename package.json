@@ -2,7 +2,7 @@
     "name": "markdown-shortcuts",
     "displayName": "Markdown Shortcuts",
     "description": "Shortcuts for Markdown editing",
-    "version": "0.3.0",
+    "version": "0.4.0",
     "publisher": "mdickin",
     "engines": {
         "vscode": "^0.10.10"
@@ -24,8 +24,8 @@
                 "command": "md-shortcut.toggleBold",
                 "title": "Toggle bold",
                 "icon": {
-                    "dark":  "./media/bold_white.svg",
-                    "light": "./media/bold_black.svg"
+                    "dark":  "./media/icons/bold_white.svg",
+                    "light": "./media/icons/bold_black.svg"
                 },
                 "category": "Markdown Shortcuts"
             },
@@ -33,8 +33,8 @@
                 "command": "md-shortcut.toggleItalic",
                 "title": "Toggle italic",
                 "icon": {
-                    "dark":  "./media/italic_white.svg",
-                    "light": "./media/italic_black.svg"
+                    "dark":  "./media/icons/italic_white.svg",
+                    "light": "./media/icons/italic_black.svg"
                 },
                 "category": "Markdown Shortcuts"
             },
@@ -42,8 +42,8 @@
                 "command": "md-shortcut.toggleCodeBlock",
                 "title": "Toggle code block",
                 "icon": {
-                    "dark":  "./media/code_white.svg",
-                    "light": "./media/code_black.svg"
+                    "dark":  "./media/icons/code_white.svg",
+                    "light": "./media/icons/code_black.svg"
                 },
                 "category": "Markdown Shortcuts"
             },
@@ -56,8 +56,8 @@
                 "command": "md-shortcut.toggleLink",
                 "title": "Toggle hyperlink",
                 "icon": {
-                    "dark":  "./media/link_white.svg",
-                    "light": "./media/link_black.svg"
+                    "dark":  "./media/icons/link_white.svg",
+                    "light": "./media/icons/link_black.svg"
                 },
                 "category": "Markdown Shortcuts"
             },
@@ -65,8 +65,8 @@
                 "command": "md-shortcut.toggleBullets",
                 "title": "Toggle bullet points",
                 "icon": {
-                    "dark":  "./media/bullet_white.svg",
-                    "light": "./media/bullet_black.svg"
+                    "dark":  "./media/icons/bullet_white.svg",
+                    "light": "./media/icons/bullet_black.svg"
                 },
                 "category": "Markdown Shortcuts"
             },
@@ -74,8 +74,8 @@
                 "command": "md-shortcut.toggleNumbers",
                 "title": "Toggle number list",
                 "icon": {
-                    "dark":  "./media/number_white.svg",
-                    "light": "./media/number_black.svg"
+                    "dark":  "./media/icons/number_white.svg",
+                    "light": "./media/icons/number_black.svg"
                 },
                 "category": "Markdown Shortcuts"
             },
@@ -83,8 +83,26 @@
                 "command": "md-shortcut.toggleCheckboxes",
                 "title": "Toggle checkboxes",
                 "icon": {
-                    "dark":  "./media/check_white.svg",
-                    "light": "./media/check_black.svg"
+                    "dark":  "./media/icons/check_white.svg",
+                    "light": "./media/icons/check_black.svg"
+                },
+                "category": "Markdown Shortcuts"
+            },
+            {
+                "command": "md-shortcut.addTable",
+                "title": "Add table",
+                "icon": {
+                    "dark":  "./media/icons/grid_white.svg",
+                    "light": "./media/icons/grid_black.svg"
+                },
+                "category": "Markdown Shortcuts"
+            },
+            {
+                "command": "md-shortcut.addTableWithHeader",
+                "title": "Add table with header",
+                "icon": {
+                    "dark":  "./media/icons/grid_white.svg",
+                    "light": "./media/icons/grid_black.svg"
                 },
                 "category": "Markdown Shortcuts"
             }
@@ -129,6 +147,11 @@
                 "command": "md-shortcut.toggleNumbers",
                 "key": "ctrl+m ctrl+1",
                 "when": "editorTextFocus && editorLangId == 'markdown'"
+            },
+            {
+                "command": "md-shortcut.toggleCheckboxes",
+                "key": "ctrl+m ctrl+x",
+                "when": "editorTextFocus && editorLangId == 'markdown'"
             }
         ],
         "menus": {
@@ -172,6 +195,16 @@
                     "command": "md-shortcut.toggleCheckboxes",
                     "when": "editorLangId == 'markdown'",
                     "group": "2_markdown_2"
+                },
+                {
+                    "command": "md-shortcut.addTable",
+                    "when": "editorLangId == 'markdown'",
+                    "group": "2_markdown_3"
+                },
+                {
+                    "command": "md-shortcut.addTableWithHeader",
+                    "when": "editorLangId == 'markdown'",
+                    "group": "2_markdown_3"
                 }
             ],
             "editor/title": [

@@ -1,4 +1,4 @@
-var commands = require('./commands');
+var commands = require('./lib/commands');
 
 function activate(context) {
 
