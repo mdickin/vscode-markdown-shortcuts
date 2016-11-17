@@ -37,12 +37,3 @@ Handy shortcuts for editing Markdown (`.md`, `.markdown`) files. Now with title 
 | md-shortcut.toggleTitleH6 | Toggle ###### H6 title |  |
 | md-shortcut.addTable | Add Tabular values |  |
 | md-shortcut.addTableWithHeader | Add Tabular values with header |  |
-
-## Changelog
-
-**v0.4.0** 
-* Added title and context menu shortcuts. Menu icons taken from http://material.io/icons
-* Added checkbox and table commands. Thanks to [@wenbaofu](https://github.com/wenbaofu) for the recommendations!
-
-**v0.3.0**
-* Added header shortcuts. Thanks to [@alebaffa](https://github.com/alebaffa) for the contribution!

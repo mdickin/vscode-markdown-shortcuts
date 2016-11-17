@@ -2,7 +2,7 @@
     "name": "markdown-shortcuts",
     "displayName": "Markdown Shortcuts",
     "description": "Shortcuts for Markdown editing",
-    "version": "0.4.0",
+    "version": "0.4.1",
     "publisher": "mdickin",
     "engines": {
         "vscode": "^0.10.10"
@@ -35,6 +35,15 @@
                 "icon": {
                     "dark":  "./media/icons/italic_white.svg",
                     "light": "./media/icons/italic_black.svg"
+                },
+                "category": "Markdown Shortcuts"
+            },
+            {
+                "command": "md-shortcut.toggleBullets",
+                "title": "Toggle bullet points",
+                "icon": {
+                    "dark":  "./media/icons/bullet_white.svg",
+                    "light": "./media/icons/bullet_black.svg"
                 },
                 "category": "Markdown Shortcuts"
             },
@@ -159,64 +168,69 @@
                 {
                     "command": "md-shortcut.toggleBold",
                     "when": "editorLangId == 'markdown'",
-                    "group": "2_markdown_1"
+                    "group": "2_markdown_1@1"
                 },
                 {
                     "command": "md-shortcut.toggleItalic",
                     "when": "editorLangId == 'markdown'",
-                    "group": "2_markdown_1"
+                    "group": "2_markdown_1@2"
                 },
                 {
                     "command": "md-shortcut.toggleLink",
                     "when": "editorLangId == 'markdown'",
-                    "group": "2_markdown_1"
+                    "group": "2_markdown_1@3"
                 },
                 {
                     "command": "md-shortcut.toggleCodeBlock",
                     "when": "editorLangId == 'markdown'",
-                    "group": "2_markdown_1"
+                    "group": "2_markdown_1@4"
                 },
                 {
                     "command": "md-shortcut.toggleInlineCode",
                     "when": "editorLangId == 'markdown'",
-                    "group": "2_markdown_1"
+                    "group": "2_markdown_1@5"
                 },
                 {
                     "command": "md-shortcut.toggleBullets",
                     "when": "editorLangId == 'markdown'",
-                    "group": "2_markdown_2"
+                    "group": "2_markdown_2@1"
                 },
                 {
                     "command": "md-shortcut.toggleNumbers",
                     "when": "editorLangId == 'markdown'",
-                    "group": "2_markdown_2"
+                    "group": "2_markdown_2@2"
                 },
                 {
                     "command": "md-shortcut.toggleCheckboxes",
                     "when": "editorLangId == 'markdown'",
-                    "group": "2_markdown_2"
+                    "group": "2_markdown_2@3"
                 },
                 {
                     "command": "md-shortcut.addTable",
                     "when": "editorLangId == 'markdown'",
-                    "group": "2_markdown_3"
+                    "group": "2_markdown_3@1"
                 },
                 {
                     "command": "md-shortcut.addTableWithHeader",
                     "when": "editorLangId == 'markdown'",
-                    "group": "2_markdown_3"
+                    "group": "2_markdown_3@2"
                 }
             ],
             "editor/title": [
                 {
                     "command": "md-shortcut.toggleBold",
                     "when": "editorLangId == 'markdown'",
-                    "group": "navigation"
+                    "group": "navigation@1"
                 },
                 {
                     "command": "md-shortcut.toggleItalic",
                     "when": "editorLangId == 'markdown'",
-                    "group": "navigation"
+                    "group": "navigation@2"
+                },
+                {
+                    "command": "md-shortcut.toggleBullets",
+                    "when": "editorLangId == 'markdown'",
+                    "group": "navigation@3"
                 }
             ]
         }
