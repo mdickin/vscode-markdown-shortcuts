@@ -2,7 +2,7 @@
     "name": "markdown-shortcuts",
     "displayName": "Markdown Shortcuts",
     "description": "Shortcuts for Markdown editing",
-    "version": "0.4.1",
+    "version": "0.5.0",
     "publisher": "mdickin",
     "engines": {
         "vscode": "^0.10.10"
@@ -22,15 +22,6 @@
         "commands": [
 
             {
-                "command": "md-shortcut.toggleStrikethrough",
-                "title": "Toggle strikethrough",
-                "icon": {
-                    "dark":  "./media/icons/strikethrough_white.svg",
-                    "light": "./media/icons/strikethrough_black.svg"
-                },
-                "category": "Markdown Shortcuts"
-            },
-            {
                 "command": "md-shortcut.toggleBold",
                 "title": "Toggle bold",
                 "icon": {
@@ -49,11 +40,11 @@
                 "category": "Markdown Shortcuts"
             },
             {
-                "command": "md-shortcut.toggleBullets",
-                "title": "Toggle bullet points",
+                "command": "md-shortcut.toggleStrikethrough",
+                "title": "Toggle strikethrough",
                 "icon": {
-                    "dark":  "./media/icons/bullet_white.svg",
-                    "light": "./media/icons/bullet_black.svg"
+                    "dark":  "./media/icons/strikethrough_white.svg",
+                    "light": "./media/icons/strikethrough_black.svg"
                 },
                 "category": "Markdown Shortcuts"
             },
