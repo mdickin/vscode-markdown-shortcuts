@@ -23,6 +23,7 @@ Handy shortcuts for editing Markdown (`.md`, `.markdown`) files. Now with title 
 | md-shortcut.showCommandPalette | Display all commands | ctrl+M ctrl+M |
 | md-shortcut.toggleBold | Make \*\*bold\*\* | ctrl+B |
 | md-shortcut.toggleItalic | Make \_italic\_ | ctrl+I |
+| md-shortcut.toggleStrikethrough | Make \~\~strikethrough\~\~ |  |
 | md-shortcut.toggleHyperlink | Make [a hyperlink]\(www.example.org) | ctrl+L |
 | md-shortcut.toggleCodeBlock | Make \`\`\`a code block\`\`\` | ctrl+M ctrl+C |
 | md-shortcut.toggleInlineCode | Make \`inline code\` | ctrl+M ctrl+I |
