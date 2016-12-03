@@ -20,6 +20,16 @@
     ],
     "contributes": {
         "commands": [
+
+            {
+                "command": "md-shortcut.toggleStrikethrough",
+                "title": "Toggle strikethrough",
+                "icon": {
+                    "dark":  "./media/icons/strikethrough_white.svg",
+                    "light": "./media/icons/strikethrough_black.svg"
+                },
+                "category": "Markdown Shortcuts"
+            },
             {
                 "command": "md-shortcut.toggleBold",
                 "title": "Toggle bold",
@@ -176,19 +186,24 @@
                     "group": "2_markdown_1@2"
                 },
                 {
-                    "command": "md-shortcut.toggleLink",
+                    "command": "md-shortcut.toggleStrikethrough",
                     "when": "editorLangId == 'markdown'",
                     "group": "2_markdown_1@3"
                 },
                 {
-                    "command": "md-shortcut.toggleCodeBlock",
+                    "command": "md-shortcut.toggleLink",
                     "when": "editorLangId == 'markdown'",
                     "group": "2_markdown_1@4"
                 },
                 {
-                    "command": "md-shortcut.toggleInlineCode",
+                    "command": "md-shortcut.toggleCodeBlock",
                     "when": "editorLangId == 'markdown'",
                     "group": "2_markdown_1@5"
+                },
+                {
+                    "command": "md-shortcut.toggleInlineCode",
+                    "when": "editorLangId == 'markdown'",
+                    "group": "2_markdown_1@6"
                 },
                 {
                     "command": "md-shortcut.toggleBullets",
@@ -228,9 +243,14 @@
                     "group": "navigation@2"
                 },
                 {
-                    "command": "md-shortcut.toggleBullets",
+                    "command": "md-shortcut.toggleStrikethrough",
                     "when": "editorLangId == 'markdown'",
                     "group": "navigation@3"
+                },
+                {
+                    "command": "md-shortcut.toggleBullets",
+                    "when": "editorLangId == 'markdown'",
+                    "group": "navigation@4"
                 }
             ]
         }
