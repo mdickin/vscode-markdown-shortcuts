@@ -1,3 +1,8 @@
+**v0.6.0**
+* Added icon. Thanks to [@LaChRiZ](https://github.com/LaChRiZ) for the contribution!
+* Modified link shortcut (ctrl+L) to surround URLs with angle brackets. Thanks to [@StephD](https://github.com/StephD)
+for the recommendation!
+
 **v0.5.0**
 * Added strikethrough shortcut. Thanks to [@seanmft](https://github.com/seanmft) for the contribution!
 * Added support for block selection. This allows you to select a subset of a block of text,
