@@ -2,6 +2,7 @@
     "name": "markdown-shortcuts",
     "displayName": "Markdown Shortcuts",
     "description": "Shortcuts for Markdown editing",
+    "icon": "media/images/markdown-shortcuts-512x512.png",
     "version": "0.5.0",
     "publisher": "mdickin",
     "engines": {
