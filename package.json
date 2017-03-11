@@ -3,7 +3,7 @@
     "displayName": "Markdown Shortcuts",
     "description": "Shortcuts for Markdown editing",
     "icon": "media/images/markdown-shortcuts-512x512.png",
-    "version": "0.6.1",
+    "version": "0.7.0",
     "publisher": "mdickin",
     "engines": {
         "vscode": "^0.10.10"
@@ -20,8 +20,43 @@
         "*"
     ],
     "contributes": {
+        "configuration": {
+            "type": "object",
+            "title": "Markdown Shortcuts",
+            "properties": {
+                "markdownShortcuts.icons.bold": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Show bold icon in title bar"
+                },
+                "markdownShortcuts.icons.italic": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Show italic icon in title bar"
+                },
+                "markdownShortcuts.icons.strikethrough": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Show strikethrough icon in title bar"
+                },
+                "markdownShortcuts.icons.bullets": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Show bullets icon in title bar"
+                },
+                "markdownShortcuts.icons.link": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Show link icon in title bar"
+                },
+                "markdownShortcuts.icons.image": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Show image icon in title bar"
+                }
+            }
+        },
         "commands": [
-
             {
                 "command": "md-shortcut.toggleBold",
                 "title": "Toggle bold",
@@ -69,6 +104,15 @@
                 "icon": {
                     "dark":  "./media/icons/link_white.svg",
                     "light": "./media/icons/link_black.svg"
+                },
+                "category": "Markdown Shortcuts"
+            },
+            {
+                "command": "md-shortcut.toggleImage",
+                "title": "Toggle image",
+                "icon": {
+                    "dark":  "./media/icons/image_white.svg",
+                    "light": "./media/icons/image_black.svg"
                 },
                 "category": "Markdown Shortcuts"
             },
@@ -140,6 +184,11 @@
                 "when": "editorTextFocus && editorLangId == 'markdown'"
             },
             {
+                "command": "md-shortcut.toggleImage",
+                "key": "ctrl+shift+l",
+                "when": "editorTextFocus && editorLangId == 'markdown'"
+            },
+            {
                 "command": "md-shortcut.toggleCodeBlock",
                 "key": "ctrl+m ctrl+c",
                 "when": "editorTextFocus && editorLangId == 'markdown'"
@@ -188,14 +237,19 @@
                     "group": "2_markdown_1@4"
                 },
                 {
-                    "command": "md-shortcut.toggleCodeBlock",
+                    "command": "md-shortcut.toggleImage",
                     "when": "editorLangId == 'markdown'",
                     "group": "2_markdown_1@5"
                 },
                 {
-                    "command": "md-shortcut.toggleInlineCode",
+                    "command": "md-shortcut.toggleCodeBlock",
                     "when": "editorLangId == 'markdown'",
                     "group": "2_markdown_1@6"
+                },
+                {
+                    "command": "md-shortcut.toggleInlineCode",
+                    "when": "editorLangId == 'markdown'",
+                    "group": "2_markdown_1@7"
                 },
                 {
                     "command": "md-shortcut.toggleBullets",
@@ -226,23 +280,33 @@
             "editor/title": [
                 {
                     "command": "md-shortcut.toggleBold",
-                    "when": "editorLangId == 'markdown'",
+                    "when": "editorLangId == 'markdown' && config.markdownShortcuts.icons.bold",
                     "group": "navigation@1"
                 },
                 {
                     "command": "md-shortcut.toggleItalic",
-                    "when": "editorLangId == 'markdown'",
+                    "when": "editorLangId == 'markdown' && config.markdownShortcuts.icons.italic",
                     "group": "navigation@2"
                 },
                 {
                     "command": "md-shortcut.toggleStrikethrough",
-                    "when": "editorLangId == 'markdown'",
+                    "when": "editorLangId == 'markdown' && config.markdownShortcuts.icons.strikethrough",
                     "group": "navigation@3"
                 },
                 {
                     "command": "md-shortcut.toggleBullets",
-                    "when": "editorLangId == 'markdown'",
+                    "when": "editorLangId == 'markdown' && config.markdownShortcuts.icons.bullets",
                     "group": "navigation@4"
+                },
+                {
+                    "command": "md-shortcut.toggleLink",
+                    "when": "editorLangId == 'markdown' && config.markdownShortcuts.icons.link",
+                    "group": "navigation@5"
+                },
+                {
+                    "command": "md-shortcut.toggleImage",
+                    "when": "editorLangId == 'markdown' && config.markdownShortcuts.icons.image",
+                    "group": "navigation@6"
                 }
             ]
         }

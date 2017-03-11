@@ -2,19 +2,22 @@
 Handy shortcuts for editing Markdown (`.md`, `.markdown`) files. Now with title and context menu integration!
 
 **Quickly toggle bullet points**
+
 ![](https://raw.githubusercontent.com/mdickin/vscode-markdown-shortcuts/master/media/demo/bullets.gif)
 
 **Easily generate URLs**
+
 ![](https://raw.githubusercontent.com/mdickin/vscode-markdown-shortcuts/master/media/demo/urls.gif)
 
 **Convert tabular data to tables**
+
 ![](https://raw.githubusercontent.com/mdickin/vscode-markdown-shortcuts/master/media/demo/table_with_header.gif)
 
-
 **Context and title menu integration**
+
 ![](https://raw.githubusercontent.com/mdickin/vscode-markdown-shortcuts/master/media/demo/shortcut_menu.png)
 
-**Note**: extension will override a few default VS Code key bindings (ctrl+B, ctrl+I, ctrl+L), but only when editing Markdown files.
+You can show and hide icons in the title bar with the `markdownShortcuts.icons.*` config settings.
 
 ## Exposed Commands
 
@@ -25,6 +28,7 @@ Handy shortcuts for editing Markdown (`.md`, `.markdown`) files. Now with title 
 | md-shortcut.toggleItalic | Make \_italic\_ | ctrl+I |
 | md-shortcut.toggleStrikethrough | Make \~\~strikethrough\~\~ |  |
 | md-shortcut.toggleHyperlink | Make [a hyperlink]\(www.example.org) | ctrl+L |
+| md-shortcut.toggleImage | Make an image ![]\(image_url.png) | ctrl+shift+L |
 | md-shortcut.toggleCodeBlock | Make \`\`\`a code block\`\`\` | ctrl+M ctrl+C |
 | md-shortcut.toggleInlineCode | Make \`inline code\` | ctrl+M ctrl+I |
 | md-shortcut.toggleBullets | Make * bullet point | ctrl+M ctrl+B |

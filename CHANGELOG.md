@@ -1,3 +1,7 @@
+**v0.7.0**
+* Added image shortcut (ctrl+shift+L). Thanks to [@ngtrian](https://github.com/ngtrian) for the recommendation!
+* Added configuration settings to show/hide icons in the title bar.
+
 **v0.6.0**
 * Added icon. Thanks to [@LaChRiZ](https://github.com/LaChRiZ) for the contribution!
 * Modified link shortcut (ctrl+L) to surround URLs with angle brackets. Thanks to [@StephD](https://github.com/StephD)
