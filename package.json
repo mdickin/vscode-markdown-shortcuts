@@ -316,7 +316,8 @@
         "test": "node ./node_modules/vscode/bin/test"
     },
     "devDependencies": {
-        "vscode": "^0.11.0"
+        "vscode": "^0.11.0",
+        "vscode-test-content": "^1.1.0"
     },
 	"homepage": "https://github.com/mdickin/vscode-markdown-shortcuts",
     "repository": {
