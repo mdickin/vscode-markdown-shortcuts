@@ -1,45 +1,33 @@
 /* global suite, test */
 
-var assert = require('assert');
-var vscode = require('vscode');
-var myExtension = require('../extension');
-var vscodeTestContent = require('vscode-test-content');
+var assert = require( 'assert' );
+var vscode = require( 'vscode' );
+var myExtension = require( '../extension' );
+var vscodeTestContent = require( 'vscode-test-content' );
 
-suite("Bold", function() {
-    test("Ranged selection", function() {
-        return vscodeTestContent.setWithSelection( 'Lets make a [bold} text!')
-            .then( editor => {
-                var expectedText = 'Lets make a [**bold**} text!';
+suite( "Bold", function() {
+    test( "Ranged selection", function() {
+        return TestCommand( 'toggleBold', 'Lets make a [bold} text!', 'Lets make a [**bold**} text!' );
+    } );
 
-                return vscode.commands.executeCommand( 'md-shortcut.toggleBold' )
-                    .then( () =>
-                        assert.strictEqual( vscodeTestContent.getWithSelection( editor ), expectedText )
-                    );
-             } );
-    });
-
-    test("Collapsed selection", function() {
+    test( "Collapsed selection", function() {
         // This is likely to be changed with #5.
-        return vscodeTestContent.setWithSelection( 'Lets make a bo^ld text!')
-            .then( editor => {
-                var expectedText = 'Lets make a bo**^**ld text!';
+        return TestCommand( 'toggleBold', 'Lets make a bo^ld text!', 'Lets make a bo**^**ld text!' );
+    } );
 
-                return vscode.commands.executeCommand( 'md-shortcut.toggleBold' )
-                    .then( () =>
-                        assert.strictEqual( vscodeTestContent.getWithSelection( editor ), expectedText )
-                    );
-             } );
-    });
+    test( "Toggles with ranged selection", function() {
+        return TestCommand( 'toggleBold', 'Time to [**unbold**} this statement', 'Time to [unbold} this statement' );
+    } );
+} );
 
-    test("Toggles with ranged selection", function() {
-        return vscodeTestContent.setWithSelection( 'Time to [**unbold**} this statement')
-            .then( editor => {
-                var expectedText = 'Time to [unbold} this statement';
-
-                return vscode.commands.executeCommand( 'md-shortcut.toggleBold' )
-                    .then( () =>
-                        assert.strictEqual( vscodeTestContent.getWithSelection( editor ), expectedText )
-                    );
-             } );
-    });
-});
+// A helper function that generates test case functions.
+// Both inputContent and expectedContent can include selection string representation.
+// Returns a promise resolving to Promise<TextEditor>.
+function TestCommand( command, inputContent, expectedContent ) {
+    return vscodeTestContent.setWithSelection( inputContent )
+        .then( editor => {
+            return vscode.commands.executeCommand( 'md-shortcut.' + command )
+                .then(() => assert.strictEqual( vscodeTestContent.getWithSelection( editor ), expectedContent ) )
+                .then(() => editor );
+        } );
+}
