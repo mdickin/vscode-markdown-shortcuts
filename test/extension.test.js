@@ -15,7 +15,20 @@ suite("Bold", function() {
                     .then( () =>
                         assert.strictEqual( vscodeTestContent.getWithSelection( editor ), expectedText )
                     );
-             } )
+             } );
+    });
+
+    test("Collapsed selection", function() {
+        // This is likely to be changed with #5.
+        return vscodeTestContent.setWithSelection( 'Lets make a bo^ld text!')
+            .then( editor => {
+                var expectedText = 'Lets make a bo**^**ld text!';
+
+                return vscode.commands.executeCommand( 'md-shortcut.toggleBold' )
+                    .then( () =>
+                        assert.strictEqual( vscodeTestContent.getWithSelection( editor ), expectedText )
+                    );
+             } );
     });
 
     test("Toggles with ranged selection", function() {
@@ -27,6 +40,6 @@ suite("Bold", function() {
                     .then( () =>
                         assert.strictEqual( vscodeTestContent.getWithSelection( editor ), expectedText )
                     );
-             } )
+             } );
     });
 });
