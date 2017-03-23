@@ -87,6 +87,20 @@ suite( "Headers", function() {
     }
 } );
 
+suite( "Block code", function() {
+    test( "Ranged selection", function() {
+        return TestCommand( 'toggleCodeBlock', '[some code}', '[```\nsome code```}' );
+    } );
+
+    test( "Collapsed selection", function() {
+        return TestCommand( 'toggleCodeBlock', 'Some code^', 'Some code```\n^```' );
+    } );
+
+    test( "Toggles with ranged selection", function() {
+        return TestCommand( 'toggleCodeBlock', '[```\nsome code```}', '[some code}' );
+    } );
+} );
+
 // A helper function that generates test case functions.
 // Both inputContent and expectedContent can include selection string representation.
 // Returns a promise resolving to Promise<TextEditor>.
