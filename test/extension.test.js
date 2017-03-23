@@ -2,7 +2,6 @@
 
 var assert = require( 'assert' );
 var vscode = require( 'vscode' );
-var myExtension = require( '../extension' );
 var vscodeTestContent = require( 'vscode-test-content' );
 
 suite( "Bold", function() {
