@@ -160,6 +160,36 @@
                     "light": "./media/icons/grid_black.svg"
                 },
                 "category": "Markdown Shortcuts"
+            },
+            {
+                "command": "md-shortcut.toggleTitleH1",
+                "title": "Toggle Header Level 1",
+                "category": "Markdown Shortcuts"
+            },
+            {
+                "command": "md-shortcut.toggleTitleH2",
+                "title": "Toggle Header Level 2",
+                "category": "Markdown Shortcuts"
+            },
+            {
+                "command": "md-shortcut.toggleTitleH3",
+                "title": "Toggle Header Level 3",
+                "category": "Markdown Shortcuts"
+            },
+            {
+                "command": "md-shortcut.toggleTitleH4",
+                "title": "Toggle Header Level 4",
+                "category": "Markdown Shortcuts"
+            },
+            {
+                "command": "md-shortcut.toggleTitleH5",
+                "title": "Toggle Header Level 5",
+                "category": "Markdown Shortcuts"
+            },
+            {
+                "command": "md-shortcut.toggleTitleH6",
+                "title": "Toggle Header Level 6",
+                "category": "Markdown Shortcuts"
             }
         ],
         "keybindings": [
