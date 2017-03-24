@@ -18,6 +18,15 @@ suite( "Bold", function() {
         // make sure nothing wrong happens when the editor is totally empty.
         return TestCommand( 'toggleBold', '^', '**^**' );
     } );
+    
+    test( "Collapsed selection empty surround editor", function() {
+        // make sure nothing wrong happens when the editor is surrounded by bold.
+        return TestCommand( 'toggleBold', '**^**', '^' );
+    } );
+
+    test( "Toggles with collapsed selection", function() {
+        return TestCommand( 'toggleBold', 'Time to **unbo^ld** this statement', 'Time to [unbold} this statement' );
+    } );
 
     test( "Toggles with ranged selection", function() {
         return TestCommand( 'toggleBold', 'Time to [**unbold**} this statement', 'Time to [unbold} this statement' );
@@ -32,6 +41,10 @@ suite( "Italic", function() {
     test( "Collapsed selection", function() {
         // This is likely to be changed with #5.
         return TestCommand( 'toggleItalic', 'Lets make a fan^cy text!', 'Lets make a [_fancy_} text!' );
+    } );
+
+    test( "Toggles with collapsed selection", function() {
+        return TestCommand( 'toggleItalic', 'Lets make less _fan^cy_ text', 'Lets make less [fancy} text' );
     } );
 
     test( "Toggles with ranged selection", function() {
@@ -49,6 +62,10 @@ suite( "Strike through", function() {
         return TestCommand( 'toggleStrikethrough', 'Lets make a fan^cy text!', 'Lets make a [~~fancy~~} text!' );
     } );
 
+    test( "Toggles with collapsed selection", function() {
+        return TestCommand( 'toggleStrikethrough', 'Lets make less ~~fan^cy~~ text', 'Lets make less [fancy} text' );
+    } );
+
     test( "Toggles with ranged selection", function() {
         return TestCommand( 'toggleStrikethrough', 'Lets make less [~~fancy~~} text', 'Lets make less [fancy} text' );
     } );
@@ -62,6 +79,10 @@ suite( "Inline code", function() {
     test( "Collapsed selection", function() {
         // This is likely to be changed with #5.
         return TestCommand( 'toggleInlineCode', 'Lets make a fan^cy text!', 'Lets make a [`fancy`} text!' );
+    } );
+
+    test( "Toggles with collapsed selection", function() {
+        return TestCommand( 'toggleInlineCode', 'Lets make less `fa^ncy` text', 'Lets make less [fancy} text' );
     } );
 
     test( "Toggles with ranged selection", function() {
@@ -81,11 +102,20 @@ suite( "Headers", function() {
 
             test( "Collapsed selection", function() {
                 // This is likely to be changed with #5.
-                return TestCommand( `toggleTitleH${i}`, 'Lets make a fan^cy text!', `Lets make a [${headerMarker} fancy} text!` );
+                return TestCommand( `toggleTitleH${i}`, 'Lets make a fan^cy text!', `[${headerMarker} Lets make a fancy text!}` );
+            } );
+
+            test( "Collapsed selection with newline", function() {
+                // This is likely to be changed with #5.
+                return TestCommand( `toggleTitleH${i}`, 'Lets make a fan^cy text!\nAnother line', `[${headerMarker} Lets make a fancy text!}\nAnother line` );
             } );
 
             test( "Toggles with ranged selection", function() {
-                return TestCommand( `toggleTitleH${i}`, `Lets make less [${headerMarker} fancy} text`, 'Lets make less [fancy} text' );
+                return TestCommand( `toggleTitleH${i}`, `[${headerMarker} Lets make less fancy text}`, '[Lets make less fancy text}' );
+            } );
+
+            test( "Toggles with collapsed selection", function() {
+                return TestCommand( `toggleTitleH${i}`, `${headerMarker} Lets make ^less fancy text`, '[Lets make less fancy text}' );
             } );
         } );
     }
@@ -105,6 +135,24 @@ suite( "Block code", function() {
         return TestCommand( 'toggleCodeBlock', '[```' + newLine + 'some code```}', '[some code}' );
     } );
 } );
+
+suite("Bullets", function () {
+    test("Collapsed selection", function () {
+        return TestCommand( 'toggleBullets', 'A line for bul^lets', '[* A line for bullets}');
+    })
+
+    test("Ranged selection", function () {
+        return TestCommand( 'toggleBullets', 'A li[st\nOf Ite}ms', '* A [list\n* Of I}tems');
+    })
+    
+    test("Toggles with collapsed selection", function () {
+        return TestCommand( 'toggleBullets', '* A line for bul^lets', '[A line for bullets}');
+    })
+    
+    test("Toggles with ranged selection", function () {
+        return TestCommand( 'toggleBullets', '* A li[st\n* Of Ite}ms', 'A list[\nOf Items}');
+    })
+});
 
 // A helper function that generates test case functions.
 // Both inputContent and expectedContent can include selection string representation.
