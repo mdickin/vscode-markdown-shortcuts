@@ -11,7 +11,12 @@ suite( "Bold", function() {
 
     test( "Collapsed selection", function() {
         // This is likely to be changed with #5.
-        return TestCommand( 'toggleBold', 'Lets make a bo^ld text!', 'Lets make a bo**^**ld text!' );
+        return TestCommand( 'toggleBold', 'Lets make a bo^ld text!', 'Lets make a [**bold**} text!' );
+    } );
+
+    test( "Collapsed selection empty editor", function() {
+        // make sure nothing wrong happens when the editor is totally empty.
+        return TestCommand( 'toggleBold', '^', '**^**' );
     } );
 
     test( "Toggles with ranged selection", function() {
@@ -26,7 +31,7 @@ suite( "Italic", function() {
 
     test( "Collapsed selection", function() {
         // This is likely to be changed with #5.
-        return TestCommand( 'toggleItalic', 'Lets make a fan^cy text!', 'Lets make a fan_^_cy text!' );
+        return TestCommand( 'toggleItalic', 'Lets make a fan^cy text!', 'Lets make a [_fancy_} text!' );
     } );
 
     test( "Toggles with ranged selection", function() {
@@ -41,7 +46,7 @@ suite( "Strike through", function() {
 
     test( "Collapsed selection", function() {
         // This is likely to be changed with #5.
-        return TestCommand( 'toggleStrikethrough', 'Lets make a fan^cy text!', 'Lets make a fan~~^~~cy text!' );
+        return TestCommand( 'toggleStrikethrough', 'Lets make a fan^cy text!', 'Lets make a [~~fancy~~} text!' );
     } );
 
     test( "Toggles with ranged selection", function() {
@@ -56,7 +61,7 @@ suite( "Inline code", function() {
 
     test( "Collapsed selection", function() {
         // This is likely to be changed with #5.
-        return TestCommand( 'toggleInlineCode', 'Lets make a fan^cy text!', 'Lets make a fan`^`cy text!' );
+        return TestCommand( 'toggleInlineCode', 'Lets make a fan^cy text!', 'Lets make a [`fancy`} text!' );
     } );
 
     test( "Toggles with ranged selection", function() {
@@ -76,7 +81,7 @@ suite( "Headers", function() {
 
             test( "Collapsed selection", function() {
                 // This is likely to be changed with #5.
-                return TestCommand( `toggleTitleH${i}`, 'Lets make a fan^cy text!', `Lets make a fan${headerMarker} ^cy text!` );
+                return TestCommand( `toggleTitleH${i}`, 'Lets make a fan^cy text!', `Lets make a [${headerMarker} fancy} text!` );
             } );
 
             test( "Toggles with ranged selection", function() {
