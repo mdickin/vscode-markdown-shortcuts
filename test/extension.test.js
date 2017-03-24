@@ -86,6 +86,7 @@ suite( "Headers", function() {
     }
 } );
 
+var newLine = vscode.workspace.getConfiguration('files').get('eol', '\r\n');
 suite( "Block code", function() {
     test( "Ranged selection", function() {
         return TestCommand( 'toggleCodeBlock', '[some code}', '[```\nsome code```}' );
@@ -96,7 +97,7 @@ suite( "Block code", function() {
     } );
 
     test( "Toggles with ranged selection", function() {
-        return TestCommand( 'toggleCodeBlock', '[```\nsome code```}', '[some code}' );
+        return TestCommand( 'toggleCodeBlock', '[```' + newLine + 'some code```}', '[some code}' );
     } );
 } );
 
