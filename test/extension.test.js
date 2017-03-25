@@ -175,6 +175,19 @@ suite("Bullets", function () {
     })
 });
 
+suite( "URLs", function() {
+    //TODO: figure out how to mock the input selections to generate links
+
+    //TODO: need to be able to escape URL brackets to avoid them being interpreted as selections
+    // test( "Toggles with collapsed selection", function() {
+    //     return TestCommand( 'toggleLink', 'A [nice url](http://www.g^oogle.com) here', 'A [nice url} here', customMarkers );
+    // } );
+
+    // test( "Toggles with ranged selection", function() {
+    //     return TestCommand( 'toggleLink', 'A [\[nice url\](http://www.google.com)} here', 'A [nice url} here', customMarkers );
+    // } );
+} );
+
 // A helper function that generates test case functions.
 // Both inputContent and expectedContent can include selection string representation.
 // Returns a promise resolving to Promise<TextEditor>.
