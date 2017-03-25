@@ -1,5 +1,13 @@
 ## Version History
 
+## v0.8.0 (March 24, 2017)
+
+* Added "surrounding word" feature for commands. This means that you can now place your cursor on a word and toggle bold, italic, etc. No need to highlight the whole word!
+* Fixed issue with newlines in block code command
+* Added missing H1-H6 commands to VS Code command palette
+
+Huge thank you to [@mlewand](https://github.com/mlewand) for his contributions and excellent [unit test library](https://www.npmjs.com/package/vscode-test-content).
+
 ## v0.7.1 (March 12, 2017)
 
 * Fixed bug with image shortcut where hitting Escape on the prompts would not cancel
