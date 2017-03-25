@@ -121,19 +121,40 @@ suite( "Headers", function() {
     }
 } );
 
-var newLine = vscode.workspace.getConfiguration('files').get('eol', '\r\n');
+var newLine = vscode.workspace.getConfiguration('files').get('eol', '\n');
 suite( "Block code", function() {
     test( "Ranged selection", function() {
-        return TestCommand( 'toggleCodeBlock', '[some code}', '[```\nsome code```}' );
+        return TestCommand( 'toggleCodeBlock', '[some code}', '[```\nsome code\n```}' );
+    } );
+
+    test( "Multiline ranged selection", function() {
+        return TestCommand( 'toggleCodeBlock', '[some code' + newLine + 'more code}', '[```\nsome code\nmore code\n```}' );
+    } );
+
+    test( "Multiline ranged selection with extra newline", function() {
+        return TestCommand( 'toggleCodeBlock', '[some code' + newLine + 'more code}' + newLine, '[```\nsome code\nmore code\n```}');
+    } );
+
+    test( "Multiline ranged selection while selecting extra newline", function() {
+        return TestCommand( 'toggleCodeBlock', '[some code' + newLine + 'more code' + newLine + '}', '[```\nsome code\nmore code\n\n```}');
     } );
 
     test( "Collapsed selection", function() {
-        return TestCommand( 'toggleCodeBlock', 'Some code^', 'Some code```\n^```' );
+        return TestCommand( 'toggleCodeBlock', 'Some code^', '[```\nSome code\n```}' );
     } );
 
     test( "Toggles with ranged selection", function() {
-        return TestCommand( 'toggleCodeBlock', '[```' + newLine + 'some code```}', '[some code}' );
+        return TestCommand( 'toggleCodeBlock', '[```' + newLine + 'some code' + newLine + 'more code' + newLine + '```}', '[some code\nmore code}' );
     } );
+
+    //TODO: are these possible?
+    // test( "Toggles with collapsed selection", function() {
+    //     return TestCommand( 'toggleCodeBlock', '```' + newLine + 'some^ code' + newLine + '```', '[some code}' );
+    // } );
+
+    // test( "Toggles with multiline collapsed selection", function() {
+    //     return TestCommand( 'toggleCodeBlock', '```' + newLine + 'some^ code' + newLine + 'more code' + newLine + '```', '[some code\nmore code}' );
+    // } );
 } );
 
 suite("Bullets", function () {
