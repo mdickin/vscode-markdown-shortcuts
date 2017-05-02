@@ -14,6 +14,11 @@ suite( "Bold", function() {
         return TestCommand( 'toggleBold', 'Lets make a bo^ld text!', 'Lets make a [**bold**} text!' );
     } );
 
+    test( "Collapsed selection with unicode characters", function() {
+        // This is likely to be changed with #5.
+        return TestCommand( 'toggleBold', 'Lets make a bÔ^ld text!', 'Lets make a [**bÔld**} text!' );
+    } );
+
     test( "Collapsed selection empty editor", function() {
         // make sure nothing wrong happens when the editor is totally empty.
         return TestCommand( 'toggleBold', '^', '**^**' );
@@ -43,6 +48,11 @@ suite( "Italic", function() {
         return TestCommand( 'toggleItalic', 'Lets make a fan^cy text!', 'Lets make a [_fancy_} text!' );
     } );
 
+    test( "Collapsed selection with unicode characters", function() {
+        // This is likely to be changed with #5.
+        return TestCommand( 'toggleItalic', 'Lets make a fÄn^cy text!', 'Lets make a [_fÄncy_} text!' );
+    } );
+
     test( "Toggles with collapsed selection", function() {
         return TestCommand( 'toggleItalic', 'Lets make less _fan^cy_ text', 'Lets make less [fancy} text' );
     } );
@@ -62,6 +72,11 @@ suite( "Strike through", function() {
         return TestCommand( 'toggleStrikethrough', 'Lets make a fan^cy text!', 'Lets make a [~~fancy~~} text!' );
     } );
 
+    test( "Collapsed selection with unicode characters", function() {
+        // This is likely to be changed with #5.
+        return TestCommand( 'toggleStrikethrough', 'Lets make a fÄn^cy text!', 'Lets make a [~~fÄncy~~} text!' );
+    } );
+
     test( "Toggles with collapsed selection", function() {
         return TestCommand( 'toggleStrikethrough', 'Lets make less ~~fan^cy~~ text', 'Lets make less [fancy} text' );
     } );
@@ -79,6 +94,11 @@ suite( "Inline code", function() {
     test( "Collapsed selection", function() {
         // This is likely to be changed with #5.
         return TestCommand( 'toggleInlineCode', 'Lets make a fan^cy text!', 'Lets make a [`fancy`} text!' );
+    } );
+
+    test( "Collapsed selection with unicode selection", function() {
+        // This is likely to be changed with #5.
+        return TestCommand( 'toggleInlineCode', 'Lets make a fÄn^cy text!', 'Lets make a [`fÄncy`} text!' );
     } );
 
     test( "Toggles with collapsed selection", function() {
