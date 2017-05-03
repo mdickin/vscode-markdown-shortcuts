@@ -1,5 +1,9 @@
 ## Version History
 
+## v0.8.1 (May 2, 2017)
+
+* Fixed word selection for words with unicode characters
+
 ## v0.8.0 (March 25, 2017)
 
 * Added "surrounding word" feature for commands. This means that you can now place your cursor on a word and toggle bold, italic, etc. No need to highlight the whole word!
