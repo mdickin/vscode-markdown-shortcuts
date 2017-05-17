@@ -27,7 +27,7 @@ You can show and hide icons in the title bar with the `markdownShortcuts.icons.*
 | md-shortcut.toggleBold | Make \*\*bold\*\* | ctrl+B |
 | md-shortcut.toggleItalic | Make \_italic\_ | ctrl+I |
 | md-shortcut.toggleStrikethrough | Make \~\~strikethrough\~\~ |  |
-| md-shortcut.toggleHyperlink | Make [a hyperlink]\(www.example.org) | ctrl+L |
+| md-shortcut.toggleLink | Make [a hyperlink]\(www.example.org) | ctrl+L |
 | md-shortcut.toggleImage | Make an image ![]\(image_url.png) | ctrl+shift+L |
 | md-shortcut.toggleCodeBlock | Make \`\`\`a code block\`\`\` | ctrl+M ctrl+C |
 | md-shortcut.toggleInlineCode | Make \`inline code\` | ctrl+M ctrl+I |
