@@ -53,6 +53,11 @@
                     "type": "boolean",
                     "default": false,
                     "description": "Show image icon in title bar"
+                },
+                "markdownShortcuts.italicizeAsterisks": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Use * instead of _ for italics"
                 }
             }
         },
