@@ -58,6 +58,11 @@
         },
         "commands": [
             {
+                "command": "md-shortcut.toggleCitations",
+                "title": "Toggle citations",
+                "category": "Markdown Shortcuts"
+            },
+            {
                 "command": "md-shortcut.toggleBold",
                 "title": "Toggle bold",
                 "icon": {
@@ -295,6 +300,11 @@
                     "command": "md-shortcut.toggleCheckboxes",
                     "when": "editorLangId == 'markdown'",
                     "group": "2_markdown_2@3"
+                },                
+                {
+                    "command": "md-shortcut.toggleCitations",
+                    "when": "editorLangId == 'markdown'",
+                    "group": "2_markdown_2@4"
                 },
                 {
                     "command": "md-shortcut.addTable",
