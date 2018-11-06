@@ -144,27 +144,52 @@ suite( "Headers", function() {
 var newLine = vscode.workspace.getConfiguration('files').get('eol', '\n');
 suite( "Block code", function() {
     test( "Ranged selection", function() {
-        return TestCommand( 'toggleCodeBlock', '[some code}', '[```\nsome code\n```}' );
+        return TestCommand( 
+            'toggleCodeBlock', 
+            '[some code}', 
+            '[```\nsome code\n```}' );
     } );
 
     test( "Multiline ranged selection", function() {
-        return TestCommand( 'toggleCodeBlock', '[some code' + newLine + 'more code}', '[```\nsome code\nmore code\n```}' );
+        return TestCommand( 
+            'toggleCodeBlock', 
+            '[some code' + newLine + 'more code}', 
+            '[```\nsome code\nmore code\n```}' );
     } );
 
     test( "Multiline ranged selection with extra newline", function() {
-        return TestCommand( 'toggleCodeBlock', '[some code' + newLine + 'more code}' + newLine, '[```\nsome code\nmore code\n```}');
+        return TestCommand( 
+            'toggleCodeBlock', 
+            '[some code' + newLine + 'more code}' + newLine, 
+            '[```\nsome code\nmore code\n```}');
     } );
 
     test( "Multiline ranged selection while selecting extra newline", function() {
-        return TestCommand( 'toggleCodeBlock', '[some code' + newLine + 'more code' + newLine + '}', '[```\nsome code\nmore code\n\n```}');
+        return TestCommand( 
+            'toggleCodeBlock', 
+            '[some code' + newLine + 'more code' + newLine + '}', 
+            '[```\nsome code\nmore code\n\n```}');
     } );
 
     test( "Collapsed selection", function() {
-        return TestCommand( 'toggleCodeBlock', 'Some code^', '[```\nSome code\n```}' );
+        return TestCommand( 
+            'toggleCodeBlock', 
+            'Some code^', 
+            '[```\nSome code\n```}' );
     } );
 
     test( "Toggles with ranged selection", function() {
-        return TestCommand( 'toggleCodeBlock', '[```' + newLine + 'some code' + newLine + 'more code' + newLine + '```}', '[some code\nmore code}' );
+        return TestCommand( 
+            'toggleCodeBlock', 
+            '[```\nsome code\n```}', 
+            '[some code}' );
+    } );
+
+    test( "Toggles with multi-line ranged selection", function() {
+        return TestCommand( 
+            'toggleCodeBlock', 
+            '[```' + newLine + 'some code' + newLine + 'more code' + newLine + '```}', 
+            '[some code\nmore code}' );
     } );
 
     //TODO: are these possible?
@@ -178,20 +203,75 @@ suite( "Block code", function() {
 } );
 
 suite("Bullets", function () {
+    // beforeEach(() => {
+    // });
+
     test("Collapsed selection", function () {
-        return TestCommand( 'toggleBullets', 'A line for bul^lets', '[* A line for bullets}');
+        return TestCommand( 'toggleBullets', 
+            'A line for bul^lets', 
+            '[* A line for bullets}');
     })
 
     test("Ranged selection", function () {
-        return TestCommand( 'toggleBullets', 'A li[st\nOf Ite}ms', '* A [list\n* Of I}tems');
+        return TestCommand( 'toggleBullets', 
+            'A li[st\nOf Ite}ms', 
+            '* A [list\n* Of} Items');
     })
     
     test("Toggles with collapsed selection", function () {
-        return TestCommand( 'toggleBullets', '* A line for bul^lets', '[A line for bullets}');
+        return TestCommand( 'toggleBullets', 
+            '* A line for bul^lets', 
+            '[A line for bullets}');
     })
     
     test("Toggles with ranged selection", function () {
-        return TestCommand( 'toggleBullets', '* A li[st\n* Of Ite}ms', 'A list[\nOf Items}');
+        return TestCommand( 'toggleBullets', 
+            '* A bullet[ed li}st', 
+            'A bulleted[ list}');
+    })
+    
+    test("Toggles with multi-line ranged selection", function () {
+        return TestCommand( 'toggleBullets', 
+            '* A li[st\n* Of Ite}ms', 
+            'A list[\nOf Items}');
+    })
+});
+
+suite("Citations", function () {
+
+    test("Collapsed selection", function () {
+        return TestCommand( 
+            'toggleCitations', 
+            'A line for ci^tation', 
+            '[> A line for citation}');
+    })
+
+    test("Ranged selection", function () {
+        return TestCommand( 
+            'toggleCitations', 
+            'A li[st\nOf Citatio}ns', 
+            '> A [list\n> Of Cit}ations');
+    })
+    
+    test("Toggles with collapsed selection", function () {
+        return TestCommand( 
+            'toggleCitations', 
+            '> A line for ci^tation', 
+            '[A line for citation}');
+    })
+    
+    test("Toggles with ranged selection", function () {
+        return TestCommand( 
+            'toggleCitations', 
+            '> A norm[al citatio}n', 
+            'A normal[ citation}');
+    })
+    
+    test("Toggles with multi-line ranged selection", function () {
+        return TestCommand( 
+            'toggleCitations', 
+            '> A li[st\n> Of Citatio}ns', 
+            'A list[\nOf Citations}');
     })
 });
 

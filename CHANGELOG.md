@@ -1,5 +1,13 @@
 ## Version History
 
+## v0.9.0 (November 5, 2018)
+
+* Added configuration item to use asterisks for italics markers (defaults to underscore)
+* Added configuration item to use dashes or plus signs for bullet point markers (defaults to asterisks)
+* Added shortcut for citations
+
+Thank you to [@FFengIll](https://github.com/FFengIll) for their contributions for citations and configurable bullet points!
+
 ## v0.8.1 (May 2, 2017)
 
 * Fixed word selection for words with unicode characters
