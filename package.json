@@ -13,7 +13,9 @@
     ],
     "keywords": [
         "markdown",
-        "shortcut"
+        "shortcut",
+        "tool",
+        "helper"
     ],
     "main": "./extension",
     "activationEvents": [

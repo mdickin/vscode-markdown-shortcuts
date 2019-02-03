@@ -3,6 +3,7 @@
 var assert = require( 'assert' );
 var vscode = require( 'vscode' );
 var vscodeTestContent = require( 'vscode-test-content' );
+var env = require('../lib/env');
 
 suite( "Bold", function() {
     test( "Ranged selection", function() {
@@ -141,7 +142,7 @@ suite( "Headers", function() {
     }
 } );
 
-var newLine = vscode.workspace.getConfiguration('files').get('eol', '\n');
+var newLine = env.getEol();
 suite( "Block code", function() {
     test( "Ranged selection", function() {
         return TestCommand( 
