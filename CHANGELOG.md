@@ -1,5 +1,9 @@
 ## Version History
 
+## v0.10.1 (February 3, 2019)
+
+* Fixed minor issue with document events. Thank you [@gama11](https://github.com/gama11) for the fix!
+
 ## v0.10.0 (February 3, 2019)
 
 * Added configuration item to allow Markdown Shortcuts to be used on other file types
