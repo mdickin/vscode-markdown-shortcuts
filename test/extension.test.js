@@ -251,7 +251,14 @@ suite("Citations", function () {
         return TestCommand( 
             'toggleCitations', 
             'A li[st\nOf Citatio}ns', 
-            '> A [list\n> Of Cit}ations');
+            '> A li[st\n> Of Citatio}ns');
+    })
+
+    test("Ranged selection with blank lines", function () {
+        return TestCommand( 
+            'toggleCitations', 
+            'A li[st\n\n\nOf Citatio}ns', 
+            '> A li[st\n> \n> \n> Of Citatio}ns');
     })
     
     test("Toggles with collapsed selection", function () {
