@@ -52,7 +52,7 @@ function activate(context) {
     // Triggered with language id change
     vscode.workspace.onDidOpenTextDocument(
         document => {
-            if (activeEditor.document === document) {
+            if (activeEditor && activeEditor.document === document) {
                 toggleMarkdownShortcuts(activeEditor.document.languageId);
             }
         },
