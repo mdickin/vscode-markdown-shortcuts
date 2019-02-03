@@ -72,6 +72,13 @@
                         "_",
                         "*"
                     ]
+                },
+                "markdownShortcuts.languages": {
+                    "type": "array",
+                    "default": [
+                        "markdown"
+                    ],
+                    "description": "Array of languages for which shortcuts will be available"
                 }
             }
         },
@@ -220,151 +227,151 @@
             {
                 "command": "md-shortcut.showCommandPalette",
                 "key": "ctrl+m ctrl+m",
-                "when": "editorTextFocus && editorLangId == 'markdown'"
+                "when": "editorTextFocus && markdownShortcuts:enabled"
             },
             {
                 "command": "md-shortcut.toggleBold",
                 "key": "ctrl+b",
-                "when": "editorTextFocus && editorLangId == 'markdown'"
+                "when": "editorTextFocus && markdownShortcuts:enabled"
             },
             {
                 "command": "md-shortcut.toggleItalic",
                 "key": "ctrl+i",
-                "when": "editorTextFocus && editorLangId == 'markdown'"
+                "when": "editorTextFocus && markdownShortcuts:enabled"
             },
             {
                 "command": "md-shortcut.toggleLink",
                 "key": "ctrl+l",
-                "when": "editorTextFocus && editorLangId == 'markdown'"
+                "when": "editorTextFocus && markdownShortcuts:enabled"
             },
             {
                 "command": "md-shortcut.toggleImage",
                 "key": "ctrl+shift+l",
-                "when": "editorTextFocus && editorLangId == 'markdown'"
+                "when": "editorTextFocus && markdownShortcuts:enabled"
             },
             {
                 "command": "md-shortcut.toggleCodeBlock",
                 "key": "ctrl+m ctrl+c",
-                "when": "editorTextFocus && editorLangId == 'markdown'"
+                "when": "editorTextFocus && markdownShortcuts:enabled"
             },
             {
                 "command": "md-shortcut.toggleInlineCode",
                 "key": "ctrl+m ctrl+i",
-                "when": "editorTextFocus && editorLangId == 'markdown'"
+                "when": "editorTextFocus && markdownShortcuts:enabled"
             },
             {
                 "command": "md-shortcut.toggleBullets",
                 "key": "ctrl+m ctrl+b",
-                "when": "editorTextFocus && editorLangId == 'markdown'"
+                "when": "editorTextFocus && markdownShortcuts:enabled"
             },
             {
                 "command": "md-shortcut.toggleNumbers",
                 "key": "ctrl+m ctrl+1",
-                "when": "editorTextFocus && editorLangId == 'markdown'"
+                "when": "editorTextFocus && markdownShortcuts:enabled"
             },
             {
                 "command": "md-shortcut.toggleCheckboxes",
                 "key": "ctrl+m ctrl+x",
-                "when": "editorTextFocus && editorLangId == 'markdown'"
+                "when": "editorTextFocus && markdownShortcuts:enabled"
             }
         ],
         "menus": {
             "editor/context": [
                 {
                     "command": "md-shortcut.toggleBold",
-                    "when": "editorLangId == 'markdown'",
+                    "when": "markdownShortcuts:enabled",
                     "group": "2_markdown_1@1"
                 },
                 {
                     "command": "md-shortcut.toggleItalic",
-                    "when": "editorLangId == 'markdown'",
+                    "when": "markdownShortcuts:enabled",
                     "group": "2_markdown_1@2"
                 },
                 {
                     "command": "md-shortcut.toggleStrikethrough",
-                    "when": "editorLangId == 'markdown'",
+                    "when": "markdownShortcuts:enabled",
                     "group": "2_markdown_1@3"
                 },
                 {
                     "command": "md-shortcut.toggleLink",
-                    "when": "editorLangId == 'markdown'",
+                    "when": "markdownShortcuts:enabled",
                     "group": "2_markdown_1@4"
                 },
                 {
                     "command": "md-shortcut.toggleImage",
-                    "when": "editorLangId == 'markdown'",
+                    "when": "markdownShortcuts:enabled",
                     "group": "2_markdown_1@5"
                 },
                 {
                     "command": "md-shortcut.toggleCodeBlock",
-                    "when": "editorLangId == 'markdown'",
+                    "when": "markdownShortcuts:enabled",
                     "group": "2_markdown_1@6"
                 },
                 {
                     "command": "md-shortcut.toggleInlineCode",
-                    "when": "editorLangId == 'markdown'",
+                    "when": "markdownShortcuts:enabled",
                     "group": "2_markdown_1@7"
                 },
                 {
                     "command": "md-shortcut.toggleBullets",
-                    "when": "editorLangId == 'markdown'",
+                    "when": "markdownShortcuts:enabled",
                     "group": "2_markdown_2@1"
                 },
                 {
                     "command": "md-shortcut.toggleNumbers",
-                    "when": "editorLangId == 'markdown'",
+                    "when": "markdownShortcuts:enabled",
                     "group": "2_markdown_2@2"
                 },
                 {
                     "command": "md-shortcut.toggleCheckboxes",
-                    "when": "editorLangId == 'markdown'",
+                    "when": "markdownShortcuts:enabled",
                     "group": "2_markdown_2@3"
-                },                
+                },
                 {
                     "command": "md-shortcut.toggleCitations",
-                    "when": "editorLangId == 'markdown'",
+                    "when": "markdownShortcuts:enabled",
                     "group": "2_markdown_2@4"
                 },
                 {
                     "command": "md-shortcut.addTable",
-                    "when": "editorLangId == 'markdown'",
+                    "when": "markdownShortcuts:enabled",
                     "group": "2_markdown_3@1"
                 },
                 {
                     "command": "md-shortcut.addTableWithHeader",
-                    "when": "editorLangId == 'markdown'",
+                    "when": "markdownShortcuts:enabled",
                     "group": "2_markdown_3@2"
                 }
             ],
             "editor/title": [
                 {
                     "command": "md-shortcut.toggleBold",
-                    "when": "editorLangId == 'markdown' && config.markdownShortcuts.icons.bold",
+                    "when": "markdownShortcuts:enabled && config.markdownShortcuts.icons.bold",
                     "group": "navigation@1"
                 },
                 {
                     "command": "md-shortcut.toggleItalic",
-                    "when": "editorLangId == 'markdown' && config.markdownShortcuts.icons.italic",
+                    "when": "markdownShortcuts:enabled && config.markdownShortcuts.icons.italic",
                     "group": "navigation@2"
                 },
                 {
                     "command": "md-shortcut.toggleStrikethrough",
-                    "when": "editorLangId == 'markdown' && config.markdownShortcuts.icons.strikethrough",
+                    "when": "markdownShortcuts:enabled && config.markdownShortcuts.icons.strikethrough",
                     "group": "navigation@3"
                 },
                 {
                     "command": "md-shortcut.toggleBullets",
-                    "when": "editorLangId == 'markdown' && config.markdownShortcuts.icons.bullets",
+                    "when": "markdownShortcuts:enabled && config.markdownShortcuts.icons.bullets",
                     "group": "navigation@4"
                 },
                 {
                     "command": "md-shortcut.toggleLink",
-                    "when": "editorLangId == 'markdown' && config.markdownShortcuts.icons.link",
+                    "when": "markdownShortcuts:enabled && config.markdownShortcuts.icons.link",
                     "group": "navigation@5"
                 },
                 {
                     "command": "md-shortcut.toggleImage",
-                    "when": "editorLangId == 'markdown' && config.markdownShortcuts.icons.image",
+                    "when": "markdownShortcuts:enabled && config.markdownShortcuts.icons.image",
                     "group": "navigation@6"
                 }
             ]
