@@ -1,5 +1,5 @@
 
-Handy shortcuts for editing Markdown (`.md`, `.markdown`) files. Now with title and context menu integration!
+Handy shortcuts for editing Markdown (`.md`, `.markdown`) files. You can also use markdown formats in any other file (see configuration settings)
 
 **Quickly toggle bullet points**
 

@@ -1,5 +1,13 @@
 ## Version History
 
+## v0.10.0 (February 3, 2019)
+
+* Added configuration item to allow Markdown Shortcuts to be used on other file types
+* Fixed issue where blank lines were not being marked as citations when selecting blocks of text
+* Fixed issue with "auto" being inserted as newline
+
+Thank you to [@raulrpearson](https://github.com/raulrpearson) for their contribution in supporting other file types!
+
 ## v0.9.0 (November 5, 2018)
 
 * Added configuration item to use asterisks for italics markers (defaults to underscore)
