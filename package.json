@@ -56,6 +56,15 @@
                     "default": false,
                     "description": "Show image icon in title bar"
                 },
+                "markdownShortcuts.bold.marker": {
+                    "type": "string",
+                    "default": "**",
+                    "description": "Bold marker",
+                    "enum": [
+                        "__",
+                        "**"
+                    ]
+                },
                 "markdownShortcuts.bullets.marker": {
                     "type": "string",
                     "default": "*",
