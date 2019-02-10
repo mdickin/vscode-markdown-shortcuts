@@ -1,5 +1,9 @@
 ## Version History
 
+## v0.10.2 (February 10, 2019)
+
+* Added configuration item to use underscores for bold markers (defaults to asterisks). Thanks to [zachvalenta](https://github.com/zachvalenta) for the recommendation!
+
 ## v0.10.1 (February 3, 2019)
 
 * Fixed minor issue with document events. Thank you [@gama11](https://github.com/gama11) for the fix!
@@ -30,7 +34,7 @@ Thank you to [@FFengIll](https://github.com/FFengIll) for their contributions fo
 * Fixed issue with newlines in block code command
 * Added missing H1-H6 commands to VS Code command palette
 
-Huge thank you to [@mlewand](https://github.com/mlewand) for his contributions and excellent [unit test library](https://www.npmjs.com/package/vscode-test-content).
+Huge thank you to [@mlewand](https://github.com/mlewand) for their contributions and excellent [unit test library](https://www.npmjs.com/package/vscode-test-content).
 
 ## v0.7.1 (March 12, 2017)
 
