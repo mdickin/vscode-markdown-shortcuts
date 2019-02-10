@@ -1,6 +1,6 @@
 ## Version History
 
-## v0.10.2 (February 10, 2019)
+## v0.11.0 (February 10, 2019)
 
 * Added configuration item to use underscores for bold markers (defaults to asterisks). Thanks to [zachvalenta](https://github.com/zachvalenta) for the recommendation!
 
