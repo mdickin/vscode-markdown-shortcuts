@@ -36,6 +36,11 @@
                     "default": true,
                     "description": "Show italic icon in title bar"
                 },
+                "markdownShortcuts.icons.citations": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Show citations icon in title bar"
+                },
                 "markdownShortcuts.icons.strikethrough": {
                     "type": "boolean",
                     "default": true,
@@ -97,6 +102,10 @@
             {
                 "command": "md-shortcut.toggleCitations",
                 "title": "Toggle citations",
+                "icon": {
+                    "dark": "./media/icons/quote_white.svg",
+                    "light": "./media/icons/quote_black.svg"
+                },
                 "category": "Markdown Shortcuts"
             },
             {
@@ -324,6 +333,11 @@
                     "group": "2_markdown_1@7"
                 },
                 {
+                    "command": "md-shortcut.toggleCitations",
+                    "when": "markdownShortcuts:enabled",
+                    "group": "2_markdown_1@8"
+                },
+                {
                     "command": "md-shortcut.toggleBullets",
                     "when": "markdownShortcuts:enabled",
                     "group": "2_markdown_2@1"
@@ -384,6 +398,10 @@
                     "command": "md-shortcut.toggleImage",
                     "when": "markdownShortcuts:enabled && config.markdownShortcuts.icons.image",
                     "group": "navigation@6"
+                },                {
+                    "command": "md-shortcut.toggleCitations",
+                    "when": "markdownShortcuts:enabled && config.markdownShortcuts.icons.citations",
+                    "group": "navigation@7"
                 }
             ]
         }
