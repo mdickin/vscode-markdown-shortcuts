@@ -36,11 +36,6 @@
                     "default": true,
                     "description": "Show italic icon in title bar"
                 },
-                "markdownShortcuts.icons.citations": {
-                    "type": "boolean",
-                    "default": true,
-                    "description": "Show citations icon in title bar"
-                },
                 "markdownShortcuts.icons.strikethrough": {
                     "type": "boolean",
                     "default": true,
@@ -60,6 +55,11 @@
                     "type": "boolean",
                     "default": false,
                     "description": "Show image icon in title bar"
+                },
+                "markdownShortcuts.icons.citations": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Show citations icon in title bar"
                 },
                 "markdownShortcuts.bold.marker": {
                     "type": "string",
