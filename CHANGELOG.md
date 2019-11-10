@@ -1,8 +1,13 @@
 ## Version History
 
+## v0.12.0 (November 10, 2019)
+
+* Added toolbar button for adding citations. Thanks to [@axiqia](https://github.com/axiqia) for the enhancement!
+  * This button is hidden by default, so go to the settings to enable it
+
 ## v0.11.0 (February 10, 2019)
 
-* Added configuration item to use underscores for bold markers (defaults to asterisks). Thanks to [zachvalenta](https://github.com/zachvalenta) for the recommendation!
+* Added configuration item to use underscores for bold markers (defaults to asterisks). Thanks to [@zachvalenta](https://github.com/zachvalenta) for the recommendation!
 
 ## v0.10.1 (February 3, 2019)
 
