@@ -419,10 +419,5 @@
     "repository": {
         "type": "git",
         "url": "https://github.com/mdickin/vscode-markdown-shortcuts.git"
-    },
-    "__metadata": {
-        "id": "a4f91432-1b7d-4acd-b906-76d8ac8ad7e7",
-        "publisherId": "6e4df8d3-5a1b-42d4-9e28-3c1aa1ff75cc",
-        "publisherDisplayName": "mdickin"
     }
 }
