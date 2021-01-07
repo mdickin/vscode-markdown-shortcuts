@@ -33,7 +33,7 @@ You can show and hide icons in the title bar with the `markdownShortcuts.icons.*
 | md-shortcut.toggleInlineCode | Make \`inline code\` | ctrl+M ctrl+I |
 | md-shortcut.toggleBullets | Make * bullet point | ctrl+M ctrl+B |
 | md-shortcut.toggleNumbers | Make 1. numbered list | ctrl+M ctrl+1 |
-| md-shortcut.toggleCheckboxes | Make - [ ] check list (Github flavored markdown) | ctrl+M ctrl+X |
+| md-shortcut.toggleCheckboxes | Make - [ ] check list (GitHub flavored markdown) | ctrl+M ctrl+X |
 | md-shortcut.toggleTitleH1 | Toggle # H1 title |  |
 | md-shortcut.toggleTitleH2 | Toggle ## H2 title |  |
 | md-shortcut.toggleTitleH3 | Toggle ### H3 title |  |
