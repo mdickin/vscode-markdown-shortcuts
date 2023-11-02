@@ -19,7 +19,7 @@
     ],
     "main": "./extension",
     "activationEvents": [
-        "*"
+        "onLanguage:markdown"
     ],
     "contributes": {
         "configuration": {
